@@ -4,6 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.3'
 
 # cloudinary
+gem 'cloudinary', '~> 1.16.0'
+#protect my secret data
 gem 'dotenv-rails', groups: [:development, :test]
 
 # Devise An authentication gem for Rails
