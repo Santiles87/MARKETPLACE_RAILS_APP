@@ -10,6 +10,15 @@
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
+    <!--Avatar Upload Field-->
+    <div class="form-group">
+    <label class="col-sm-4 col-form-label">Avatar:
+    <% if current_user.avatar.present? %><br />Current: <%= current_user.avatar.filename.to_s %><% end %>
+    </label>
+    <div class="col-sm-8"><%= f.input :avatar, as: :file, class: "form-control" %></div>
+    </div>
+    <!--Avatar Upload Field-->
+
     <%= f.input :password,
                 hint: "leave it blank if you don't want to change it",
                 required: false,
