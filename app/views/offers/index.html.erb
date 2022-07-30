@@ -9,7 +9,9 @@
   <div class="row mt-3 ps-3">
   <% @offers.each do |offer| %>
     <div class="card-trip" style="width: 18rem;">
-      <%= cl_image_tag offer.image.key if offer.image.key%>
+      <div>
+        <%= cl_image_tag offer.image.key if offer.image.key%>
+      </div>
       <div class="card-trip-infos">
         <div>
           <h2><%= offer.product_name %></h2>
