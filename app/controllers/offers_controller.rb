@@ -27,3 +27,4 @@ class OffersController < ApplicationController
     params.require(:offer).permit(:product_name, :price, :description, :image, :location)
   end
 end
+

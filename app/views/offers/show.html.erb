@@ -1,5 +1,5 @@
-<div class="card" style="width: 18rem;">
-  <img src=" <%= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %>" class="card-img-top" alt="...">
+<div class="card" style="width: 24rem;">
+  <%= cl_image_tag @offer.image.key, height: 300, width: 382, crop: :fill %>
   <div class="card-body">
     <h5 class="card-title"><%= @offer.product_name %></h5>
     <p class="card-text"><%= @offer.description %></p>
