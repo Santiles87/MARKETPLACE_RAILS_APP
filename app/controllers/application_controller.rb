@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-adding_attributes_to_user
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def configure_permitted_parameters
