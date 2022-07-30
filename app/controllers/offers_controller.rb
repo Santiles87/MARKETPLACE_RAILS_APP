@@ -25,9 +25,14 @@ class OffersController < ApplicationController
 
   def edit; end
 
+  def update
+    @offer.update(offer_params)
+    redirect_to @offer_path
+  end
+
   def destroy
     @offer.destroy
-    redirect_to lists_path
+    redirect_to offers_path
   end
   private
 
