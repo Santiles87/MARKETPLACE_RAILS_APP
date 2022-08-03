@@ -3,6 +3,8 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 4px;
+  width: 20rem;
+  padding: 0 !important;
 }
 
 .card-trip > img {
@@ -37,4 +39,11 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.card-image-index {
+  object-fit: cover;
+  width: 20rem;
+  height: 17.5rem;
+  padding: 0.5rem;
 }
