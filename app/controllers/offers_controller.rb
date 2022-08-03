@@ -1,13 +1,14 @@
 class OffersController < ApplicationController
-
   before_action :offer_params, only: %i[create]
   before_action :offers_id, only: %i[show edit destroy]
 
   def index
-    @offers = Offer.all
+    @offers = policy_scope(Offer).order(created_at: :desc)
   end
 
-  def show; end
+  def show
+    authorize @offer
+  end
 
   def new
     @offer = Offer.new
@@ -15,12 +16,13 @@ class OffersController < ApplicationController
 
   def create
     @offer = Offer.new(offer_params)
+    authorize @offer
 
-   if @offer.save
-    redirect_to @offer
-   else
-    render :new
-   end
+    if @offer.save
+      redirect_to @offer
+    else
+      render :new
+    end
   end
 
   def edit; end
