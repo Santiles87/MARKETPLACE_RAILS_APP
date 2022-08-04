@@ -16,7 +16,10 @@
           </li>
 
             <li class="nav-item active">
-            <%= link_to "Add New offers", new_offer_path, class: "nav-link" %>
+            <%= link_to "New offer", new_offer_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item active">
+            <%= link_to 'Offers', offers_path, class: "nav-link" %>
           </li>
 
           <li class="nav-item">
@@ -27,8 +30,10 @@
             <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Profile", "#", class: "dropdown-item" %>
+
               <%= link_to 'Offers', offers_path, class: "dropdown-item"  %>
               <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item", data: {"turbo-method": :delete} %>
+
             </div>
           </li>
         <% else %>
