@@ -1,15 +1,4 @@
-
 <br>
 <div class="container">
-<%= simple_form_for @offer do |f| %>
-  <%= f.input :product_name, label: 'Add your product name here', error: 'Product name is mandatory, please specify one' %>
-  <%= f.input :price, label: 'Add your price here.' %>
-  <%= f.input :description, label: 'What is the condition of your product? Add the description here!' %>
-  <%= f.input :location, label: 'Add your location here' %>
-  <%= f.input :image, as: :file %>
-  <%= f.button :submit %>
-<% end %>
-</div>
-
-<%= render 'form', offer: @offer %>
-
+  <%= render 'form', offer: @offer %>
+</div

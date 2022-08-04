@@ -11,7 +11,9 @@
     <li class="list-group-item"><%= @offer.location %></li>
   </ul>
   <div class="card-body d-flex justify-content-between">
-    <%= link_to 'Edit', edit_offer_path(@offer), class:"btn btn-primary rounded-4" %>
+    <% if policy(@offer).edit? %>
+      <%= link_to 'Edit', edit_offer_path(@offer), class:"btn btn-primary rounded-4" %>
+    <% end %>
     <%= link_to 'Delete', offer_path(@offer), class: 'btn btn-danger rounded-4', method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
 </div>
