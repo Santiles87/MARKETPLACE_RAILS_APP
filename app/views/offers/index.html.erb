@@ -1,32 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<div class="text-center">
-  <h3 >Moving in?</h4>
-  <h4>Find the best products here!</h4>
-</div>
-
-<div>
-  <div class="row mt-3 ps-3">
-  <% @offers.each do |offer| %>
-    <div class="card-trip" style="width: 18rem;">
-      <div>
-        <%= cl_image_tag offer.image.key if offer.image.key%>
-      </div>
-      <div class="card-trip-infos">
+<div class="container">
+  <div class="row">
+    <% @offers.each do |offer| %>
+      <div class="card-trip  ">
         <div>
-          <h2><%= offer.product_name %></h2>
+          <%= cl_image_tag offer.image.key, class: "card-image-index" if offer.image.key%>
         </div>
-        <h2 class="card-trip-pricing">$<%= offer.price %></h2>
-      </div>
-      <div>
-        <p><%= link_to 'Details', offer,class:"btn btn-primary rounded-4" %></p>
         <br>
+
+        <div class="card-trip-infos">
+          <div>
+           <h2><%= offer.product_name %></h2>
+          </div>
+
+          <h2 class="card-trip-pricing">$<%= offer.price %></h2>
+
+        </div>
+        <br>
+
+        <div>
+          <%= link_to 'Details', offer,class:"btn btn-outline-primary rounded-4 ms-2 mb-2" %>
+          <br>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
-
-
-<% end %>
-
-<br>
