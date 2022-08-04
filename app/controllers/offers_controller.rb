@@ -4,7 +4,11 @@ class OffersController < ApplicationController
   before_action :offers_id, only: %i[show edit destroy]
 
   def index
-    @offers = Offer.all
+    if params[:query].present?
+      @offers = Offer.where("product_name ILIKE ?", "%#{params[:query]}%")
+    else
+      @offers = Offer.all
+    end
   end
 
   def show; end
