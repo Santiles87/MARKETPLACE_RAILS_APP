@@ -12,10 +12,11 @@ class OffersController < ApplicationController
 
   def new
     @offer = Offer.new
+    authorize @offer
   end
 
   def create
-    @offer = Offer.new(offer_params)
+    @offer = Offer.new(offer_params.merge(user: current_user))
     authorize @offer
 
     if @offer.save
@@ -25,7 +26,9 @@ class OffersController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    authorize @offer
+  end
 
   def update
     @offer.update(offer_params)
