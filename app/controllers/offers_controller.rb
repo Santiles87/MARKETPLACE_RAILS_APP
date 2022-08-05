@@ -4,6 +4,9 @@ class OffersController < ApplicationController
 
   def index
     @offers = policy_scope(Offer).order(created_at: :desc)
+    if params[:query].present?
+      @offers = @offers.where("product_name ILIKE ?", "%#{params[:query]}%")
+    end
   end
 
   def show

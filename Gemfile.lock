@@ -107,7 +107,7 @@ GEM
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
       railties (>= 3.2)
-    erubi (1.11.0)
+    erubi (1.10.0)
     execjs (2.7.0)
     ffi (1.15.5)
     file_validators (3.0.0)
@@ -145,6 +145,8 @@ GEM
     netrc (0.11.0)
     nio4r (2.5.8)
     nokogiri (1.13.8-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.13.8-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.4.2)
@@ -270,6 +272,9 @@ GEM
 
 PLATFORMS
   x86_64-darwin-19
+  x86_64-darwin-20
+  x86_64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   autoprefixer-rails (= 10.2.5)
