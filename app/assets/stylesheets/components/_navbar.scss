@@ -1,5 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
+  height: 75px;
   background: #395B64;
   opacity: 0.5;
   position: sticky;
@@ -19,4 +20,9 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 80px;
+}
+
+.search-navbar {
+  justify-content: space-between;
+  width: 500px !important;
 }

@@ -1,10 +1,11 @@
 <!-- [...] -->
-<%= form_tag movies_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find your item here"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
+<%= form_tag offers_path, method: :get do %>
+  <div class="d-flex search-navbar">
+    <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find your item here" %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  </div>
 <% end %>
 <!-- the list of items -->
