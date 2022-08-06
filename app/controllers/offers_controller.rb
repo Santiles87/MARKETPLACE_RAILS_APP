@@ -40,6 +40,7 @@ class OffersController < ApplicationController
 
   def destroy
     @offer.destroy
+    authorize @offer
     redirect_to offers_path
   end
 
