@@ -48,6 +48,14 @@
   padding: 0.5rem;
 }
 
+.card-content {
+  justify-content: space-between;
+}
+
+
+.card-content:only-child {
+  justify-content: center;
+}
 
 
 .cards {
