@@ -23,7 +23,7 @@ class OffersController < ApplicationController
     authorize @offer
 
     if @offer.save
-      redirect_to @offer
+      redirect_to offers_path
     else
       render :new
     end
@@ -36,7 +36,7 @@ class OffersController < ApplicationController
   def update
     @offer.update(offer_params)
     authorize @offer
-    redirect_to @offer
+    redirect_to offers_path
   end
 
   def destroy
@@ -48,7 +48,7 @@ class OffersController < ApplicationController
   private
 
   def offer_params
-    params.require(:offer).permit(:product_name, :price, :description, :image, :location)
+    params.require(:offer).permit(:product_name, :price, :description, :image, :location, :available)
   end
 
   def offers_id
