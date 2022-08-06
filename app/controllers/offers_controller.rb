@@ -1,6 +1,6 @@
 class OffersController < ApplicationController
-  before_action :offer_params, only: %i[create]
-  before_action :offers_id, only: %i[show edit destroy]
+  before_action :offer_params, only: %i[create update]
+  before_action :offers_id, only: %i[show edit update destroy]
 
   def index
     @offers = policy_scope(Offer).order(created_at: :desc)
@@ -35,7 +35,8 @@ class OffersController < ApplicationController
 
   def update
     @offer.update(offer_params)
-    redirect_to @offer_path
+    authorize @offer
+    redirect_to @offer
   end
 
   def destroy
