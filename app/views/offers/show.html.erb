@@ -11,12 +11,17 @@
         <li class="list-group-item">$ <%= @offer.price.to_i%>.00</li>
         <li class="list-group-item"><%= @offer.location %></li>
       </ul>
-      <div class="card-body d-flex justify-content-between">
-        <% if policy(@offer).edit? %>
+      <% if @offer.user_id == current_user.id %>
+        <div class="card-body d-flex justify-content-between">
+      <% else %>
+        <div class="card-body d-flex justify-content-center">
+      <% end %>
+        <% if @offer.user_id == current_user.id %>
+          <%= link_to 'Delete', offer_path(@offer), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
           <%= link_to 'Edit', edit_offer_path(@offer), class:"btn btn-primary" %>
+        <% else %>
+          <%= link_to "Buy now", offer_path(@offer, offer: {available: false}), method: :patch, class: " btn btn-success",  data: { confirm: 'Thank you for your purchasing!' } %>
         <% end %>
-        <%= link_to "Buy now", offer_path(@offer, offer: {available: false}), method: :patch, class: " btn btn-success",  data: { confirm: 'Thank you for your purchasing!' } %>
-        <%= link_to 'Delete', offer_path(@offer), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
       </div>
     </div>
   </div>
