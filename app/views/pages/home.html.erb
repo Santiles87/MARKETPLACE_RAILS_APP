@@ -3,7 +3,7 @@
   <div class="container">
   <br>
     <h1><strong>MOVE EASY!</strong></h1>
-    <p>Moving in? Moving out? Need everything gone? Moving was never so easy!</p>
+    <p><span class="mov"> </span></p> 
      <%= link_to "Offers", offers_path, class:"btn btn-flat" %>
   </div>
 </div>
@@ -58,3 +58,13 @@
     <%= link_to "sair", destroy_user_session_path, method: :delete, class: "btn btn-dark w-25 "  %>
   </div>
 <% end  %>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+    var typed = new Typed(".mov",{
+    strings: [,  "Moving has never been so easy! "] ,
+    typeSpeed: 100,
+    backSpeed: 100,
+    loop: true
+    })
+</script>
